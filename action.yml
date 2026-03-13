@@ -1,0 +1,25 @@
+name: 'Resolve Outdated PR Comments'
+description: 'Automatically resolve outdated or stale PR review comment threads'
+author: 'Justin Poehnelt'
+
+inputs:
+  token:
+    description: 'GitHub token with pull request write permissions'
+    required: false
+    default: ${{ github.token }}
+  strategy:
+    description: |
+      Strategy for determining which threads to resolve:
+      - "outdated": only resolve threads GitHub marks as outdated (code lines changed)
+      - "older_sha": only resolve threads where the original comment commit != head SHA
+      - "any": resolve if either condition is true (default)
+    required: false
+    default: 'any'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'

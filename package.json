@@ -1,0 +1,23 @@
+{
+  "name": "resolve-comments",
+  "version": "1.0.0",
+  "description": "GitHub Action to auto-resolve outdated PR review comment threads",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": ["github-action", "pull-request", "review", "comments"],
+  "author": "Justin Poehnelt",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
