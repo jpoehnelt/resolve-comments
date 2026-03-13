@@ -30,6 +30,7 @@ jobs:
           title: 'chore: version release'
           commit: 'chore: version release'
           version: npx changeset version
+          publish: npx changeset tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
